@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WASSHOT — Cinematic Reel Studio</title>
+    <meta name="description" content="Premium cinematic reels for your most precious moments">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="assets/images/logo.jpg">
+    <link rel="shortcut icon" type="image/jpeg" href="assets/images/logo.jpg">
+    <link rel="apple-touch-icon" href="assets/images/logo.jpg">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="home.html" class="nav-logo">WAS<span>SHOT</span></a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="home.html" class="nav-link active">Home</a></li>
+                <li><a href="reels.html" class="nav-link">Our Work</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="book.html" class="nav-link">Book</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero scene-3d">
+        <div class="hero-bg"></div>
+        <div class="hero-grid"></div>
+        <div class="floating-particles" id="hero-particles"></div>
+        
+        <!-- Light Rays Container -->
+        <div class="light-rays-container"></div>
+        
+        <div class="container">
+            <div class="hero-content parallax-container">
+                <div class="hero-label depth-layer depth-layer-1">
+                    <span class="hero-label-dot"></span>
+                    <span class="hero-label-text">Cinematic Excellence</span>
+                </div>
+                
+                <h1 class="text-display hero-title depth-layer depth-layer-3">
+                    <span class="hero-title-line"><span>We craft</span></span>
+                    <span class="hero-title-line"><span>stories that</span></span>
+                    <span class="hero-title-line"><span class="text-accent shimmer-text" data-text="move you.">move you.</span></span>
+                </h1>
+                
+                <p class="hero-description depth-layer depth-layer-2">
+                    Premium cinematic reels that transform your precious moments into timeless visual narratives. Delivered within hours.
+                </p>
+                
+                <div class="hero-actions depth-layer depth-layer-1">
+                    <a href="book.html" class="btn btn-primary btn-large hover-lift shine-sweep magnetic">
+                        <span>Book a Session</span>
+                        <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                    <a href="reels.html" class="btn btn-secondary btn-large hover-lift shine-sweep magnetic">
+                        <span>View Our Work</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-scroll">
+            <span>Scroll</span>
+            <div class="hero-scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item reveal">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Events Captured</div>
+                </div>
+                <div class="stat-item reveal">
+                    <div class="stat-number">3hr</div>
+                    <div class="stat-label">Average Delivery</div>
+                </div>
+                <div class="stat-item reveal">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Client Satisfaction</div>
+                </div>
+                <div class="stat-item reveal">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Support Available</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Preview -->
+    <section class="section-lg scene-3d">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">What We Do</span>
+                <h2 class="section-title shimmer-text">Cinematic coverage for<br>every occasion</h2>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card reveal card-glow shine-sweep hover-lift" data-tilt data-tilt-glare>
+                    <div class="service-icon neon-glow">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+                        </svg>
+                    </div>
+                    <h3>Weddings</h3>
+                    <p>Capture every emotion, every tear of joy, every dance move. Your wedding story, cinematically told.</p>
+                </div>
+                
+                <div class="service-card reveal card-glow shine-sweep hover-lift" data-tilt data-tilt-glare>
+                    <div class="service-icon neon-glow">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18z"></path>
+                        </svg>
+                    </div>
+                    <h3>Celebrations</h3>
+                    <p>Birthdays, anniversaries, graduations. Every milestone deserves to be immortalized in film.</p>
+                </div>
+                
+                <div class="service-card reveal card-glow shine-sweep hover-lift" data-tilt data-tilt-glare>
+                    <div class="service-icon neon-glow">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                        </svg>
+                    </div>
+                    <h3>Corporate</h3>
+                    <p>Professional event coverage that captures your brand's essence and corporate milestones.</p>
+                </div>
+            </div>
+            
+            <div class="text-center reveal" style="margin-top: var(--space-12);">
+                <a href="services.html" class="btn btn-secondary hover-lift magnetic shine-sweep">
+                    <span>View All Services</span>
+                    <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder -->
+    <section class="section-lg founder-section-wrap" style="background: var(--surface-1);">
+        <div class="floating-particles" id="founder-particles"></div>
+        <div class="container">
+            <div class="founder-section">
+                <div class="founder-image" style="background-image: url('./assets/images/wasim-akram.jpg'); background-size: cover; background-position: center top;">
+                    <div class="founder-image-glow"></div>
+                    <div class="founder-image-border"></div>
+                </div>
+                <div class="founder-content">
+                    <span class="founder-label">
+                        <span class="label-line"></span>
+                        The Visionary
+                        <span class="label-line"></span>
+                    </span>
+                    <h2 class="founder-name split-text-3d">Wasim Akram</h2>
+                    <p class="founder-role">Founder & Creative Director</p>
+                    <blockquote class="founder-quote">
+                        <span class="quote-mark">"</span>
+                        Every frame we capture is a piece of your story. Our mission is to transform fleeting moments into eternal memories that you'll cherish forever.
+                        <span class="quote-mark">"</span>
+                    </blockquote>
+                    <div class="founder-signature">
+                        <svg class="signature-svg" viewBox="0 0 200 60" fill="none">
+                            <path class="signature-path" d="M10 40 Q30 10 50 35 T90 30 Q110 25 130 35 T170 30 L190 35" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content reveal">
+                <h2 class="cta-title">Ready to create<br><span class="text-accent">something beautiful?</span></h2>
+                <p class="cta-description">Book your session today and let us craft a visual story that captures the essence of your special moments.</p>
+                <a href="book.html" class="btn btn-primary btn-large">
+                    <span>Start Your Journey</span>
+                    <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">WAS<span>SHOT</span></div>
+                <p class="footer-text">© 2026 WASSHOT Studio. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="services.html">Services</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="book.html">Book</a>
+                </div>
+            </div>
+            <div class="footer-credit">
+                <span>Crafted by <a href="#" target="_blank">UXI</a></span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/animations.js"></script>
+</body>
+</html>
