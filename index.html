@@ -283,7 +283,26 @@
             }
             #nav-toggle {
                 display: flex !important;
+                flex-direction: column !important;
+                gap: 6px !important;
+                width: 28px !important;
+                cursor: pointer !important;
                 z-index: 9999 !important;
+                position: relative !important;
+            }
+            #nav-toggle span {
+                display: block !important;
+                width: 100% !important;
+                height: 2px !important;
+                background: #fffef5 !important;
+            }
+            .navbar {
+                position: fixed !important;
+                top: 0 !important;
+                left: 0 !important;
+                right: 0 !important;
+                z-index: 10000 !important;
+                background: rgba(12, 11, 10, 0.95) !important;
             }
         }
     </style>
