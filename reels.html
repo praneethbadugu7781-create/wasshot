@@ -46,42 +46,19 @@
     </header>
 
     <!-- Gallery -->
-    <section class="section scene-3d">
+    <section class="section">
         <div class="container">
-            <!-- Global Sound Control -->
-            <div class="sound-control-global reveal">
-                <button class="sound-toggle-btn" id="globalSoundToggle">
-                    <svg class="sound-on-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path>
-                    </svg>
-                    <svg class="sound-off-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display: none;">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path>
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"></path>
-                    </svg>
-                    <span class="sound-label">Sound On</span>
-                </button>
-            </div>
-
             <div class="reels-grid reels-grid-4">
                 <!-- Reel 1: Happy Customers -->
-                <div class="reel-card reveal card-glow shine-sweep hover-lift" data-tilt>
+                <div class="reel-card reveal">
                     <div class="reel-video-container">
-                        <video class="reel-video" loop playsinline muted>
+                        <video class="reel-video" loop playsinline muted preload="metadata">
                             <source src="reels/video1.mp4" type="video/mp4">
                         </video>
                         <div class="reel-overlay">
-                            <button class="reel-play-btn">
-                                <svg class="play-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                <svg class="pause-icon" fill="currentColor" viewBox="0 0 24 24" style="display: none;"><path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/></svg>
-                            </button>
-                            <button class="reel-sound-btn" title="Toggle Sound">
-                                <svg class="sound-on" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072M18.364 5.636a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path>
-                                </svg>
-                                <svg class="sound-off" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display: none;">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15zM17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"></path>
-                                </svg>
-                            </button>
+                            <div class="reel-play-icon">
+                                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
                         </div>
                     </div>
                     <div class="reel-info">
@@ -91,24 +68,15 @@
                 </div>
 
                 <!-- Reel 2: Photoshoot -->
-                <div class="reel-card reveal card-glow shine-sweep hover-lift" data-tilt>
+                <div class="reel-card reveal">
                     <div class="reel-video-container">
-                        <video class="reel-video" loop playsinline muted>
+                        <video class="reel-video" loop playsinline muted preload="metadata">
                             <source src="reels/video2.mp4" type="video/mp4">
                         </video>
                         <div class="reel-overlay">
-                            <button class="reel-play-btn">
-                                <svg class="play-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                <svg class="pause-icon" fill="currentColor" viewBox="0 0 24 24" style="display: none;"><path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/></svg>
-                            </button>
-                            <button class="reel-sound-btn" title="Toggle Sound">
-                                <svg class="sound-on" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072M18.364 5.636a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path>
-                                </svg>
-                                <svg class="sound-off" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display: none;">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15zM17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"></path>
-                                </svg>
-                            </button>
+                            <div class="reel-play-icon">
+                                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
                         </div>
                     </div>
                     <div class="reel-info">
@@ -118,24 +86,15 @@
                 </div>
 
                 <!-- Reel 3: Sankranthi -->
-                <div class="reel-card reveal card-glow shine-sweep hover-lift" data-tilt>
+                <div class="reel-card reveal">
                     <div class="reel-video-container">
-                        <video class="reel-video" loop playsinline muted>
+                        <video class="reel-video" loop playsinline muted preload="metadata">
                             <source src="reels/video3.mp4" type="video/mp4">
                         </video>
                         <div class="reel-overlay">
-                            <button class="reel-play-btn">
-                                <svg class="play-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                <svg class="pause-icon" fill="currentColor" viewBox="0 0 24 24" style="display: none;"><path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/></svg>
-                            </button>
-                            <button class="reel-sound-btn" title="Toggle Sound">
-                                <svg class="sound-on" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072M18.364 5.636a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path>
-                                </svg>
-                                <svg class="sound-off" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display: none;">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15zM17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"></path>
-                                </svg>
-                            </button>
+                            <div class="reel-play-icon">
+                                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
                         </div>
                     </div>
                     <div class="reel-info">
@@ -145,24 +104,15 @@
                 </div>
 
                 <!-- Reel 4: Birthday -->
-                <div class="reel-card reveal card-glow shine-sweep hover-lift" data-tilt>
+                <div class="reel-card reveal">
                     <div class="reel-video-container">
-                        <video class="reel-video" loop playsinline muted>
+                        <video class="reel-video" loop playsinline muted preload="metadata">
                             <source src="reels/video4.mp4" type="video/mp4">
                         </video>
                         <div class="reel-overlay">
-                            <button class="reel-play-btn">
-                                <svg class="play-icon" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                <svg class="pause-icon" fill="currentColor" viewBox="0 0 24 24" style="display: none;"><path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z"/></svg>
-                            </button>
-                            <button class="reel-sound-btn" title="Toggle Sound">
-                                <svg class="sound-on" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072M18.364 5.636a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path>
-                                </svg>
-                                <svg class="sound-off" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display: none;">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15zM17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"></path>
-                                </svg>
-                            </button>
+                            <div class="reel-play-icon">
+                                <svg fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
                         </div>
                     </div>
                     <div class="reel-info">

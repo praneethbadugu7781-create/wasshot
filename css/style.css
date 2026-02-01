@@ -1213,43 +1213,20 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ========== REELS GALLERY ========== */
-.sound-control-global {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: var(--space-6);
-}
-
-.global-sound-btn {
-    display: flex;
-    align-items: center;
-    gap: var(--space-2);
-    padding: var(--space-3) var(--space-5);
-    background: var(--surface-2);
-    border: 1px solid rgba(255, 254, 245, 0.15);
-    border-radius: 50px;
-    color: var(--ivory);
-    font-family: var(--font-sans);
-    font-size: var(--text-sm);
-    cursor: pointer;
-    transition: all 0.3s var(--ease-out-expo);
-}
-
-.global-sound-btn:hover {
-    background: var(--surface-3);
-    border-color: rgba(255, 254, 245, 0.3);
-    transform: translateY(-2px);
-}
-
-.global-sound-btn svg {
-    width: 18px;
-    height: 18px;
-}
-
 .reels-grid-4 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-6);
-    perspective: 1200px;
+}
+
+.reel-card {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reel-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
 }
 
 .reel-video-container {
@@ -1258,21 +1235,13 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
     background: var(--surface-2);
     border-radius: 12px;
-    transform-style: preserve-3d;
-    transition: transform 0.5s var(--ease-out-expo), box-shadow 0.5s ease;
-}
-
-.reel-video-container:hover {
-    box-shadow: 
-        0 30px 60px -15px rgba(0,0,0,0.6),
-        0 0 0 1px rgba(255,254,245,0.1);
-    transform: translateY(-5px);
 }
 
 .reel-video {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    pointer-events: none;
 }
 
 .reel-overlay {
@@ -1280,90 +1249,52 @@ h1, h2, h3, h4, h5, h6 {
     inset: 0;
     background: linear-gradient(to top, 
         rgba(12, 11, 10, 0.9) 0%, 
-        transparent 30%,
-        transparent 70%,
-        rgba(12, 11, 10, 0.3) 100%);
-    pointer-events: none;
-    z-index: 1;
-}
-
-.reel-controls {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 3;
+        rgba(12, 11, 10, 0.2) 40%,
+        rgba(12, 11, 10, 0.2) 60%,
+        rgba(12, 11, 10, 0.4) 100%);
     display: flex;
-    gap: var(--space-4);
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    transition: background 0.3s ease;
 }
 
-.reel-play-btn {
-    width: 64px;
-    height: 64px;
-    border: 2px solid rgba(255, 254, 245, 0.5);
+.reel-card:hover .reel-overlay {
+    background: linear-gradient(to top, 
+        rgba(12, 11, 10, 0.95) 0%, 
+        rgba(12, 11, 10, 0.4) 40%,
+        rgba(12, 11, 10, 0.4) 60%,
+        rgba(12, 11, 10, 0.5) 100%);
+}
+
+.reel-play-icon {
+    width: 70px;
+    height: 70px;
+    border: 2px solid rgba(255, 254, 245, 0.6);
     border-radius: 50%;
-    background: rgba(12, 11, 10, 0.6);
+    background: rgba(12, 11, 10, 0.5);
     backdrop-filter: blur(10px);
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
-    transition: all 0.4s var(--ease-out-expo);
+    transition: all 0.3s ease;
 }
 
-.reel-play-btn:hover {
+.reel-play-icon svg {
+    width: 28px;
+    height: 28px;
+    color: var(--ivory);
+    margin-left: 4px;
+}
+
+.reel-card:hover .reel-play-icon {
     background: var(--ivory);
     border-color: var(--ivory);
     transform: scale(1.1);
 }
 
-.reel-play-btn svg {
-    width: 24px;
-    height: 24px;
-    color: var(--ivory);
-    margin-left: 3px;
-    transition: color 0.3s ease;
-}
-
-.reel-play-btn:hover svg {
+.reel-card:hover .reel-play-icon svg {
     color: var(--obsidian);
-}
-
-.reel-play-btn.playing svg {
-    margin-left: 0;
-}
-
-.reel-sound-btn {
-    position: absolute;
-    bottom: var(--space-4);
-    right: var(--space-4);
-    width: 44px;
-    height: 44px;
-    border: 1px solid rgba(255, 254, 245, 0.3);
-    border-radius: 50%;
-    background: rgba(12, 11, 10, 0.6);
-    backdrop-filter: blur(10px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    z-index: 3;
-    transition: all 0.3s var(--ease-out-expo);
-}
-
-.reel-sound-btn:hover {
-    background: rgba(255, 254, 245, 0.2);
-    border-color: rgba(255, 254, 245, 0.5);
-}
-
-.reel-sound-btn svg {
-    width: 20px;
-    height: 20px;
-    color: var(--ivory);
-}
-
-.reel-sound-btn.muted svg {
-    opacity: 0.5;
 }
 
 .reel-info {

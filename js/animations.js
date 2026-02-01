@@ -9,20 +9,20 @@ document.addEventListener('DOMContentLoaded', () => {
     initMobileNav();
     initScrollAnimations();
     init3DCards();
-    init3DParallax();
+    // init3DParallax(); // Disabled - causing glitchy movement
     initMouseFollow();
-    initTextSplit();
+    // initTextSplit(); // Disabled - causing letter glitches
     initMagneticButtons();
     initSmoothScroll();
     initFloatingElements();
-    initParticleSystem();
-    initCursorTrail();
-    initLightRays();
+    // initParticleSystem(); // Disabled - performance issues
+    // initCursorTrail(); // Disabled - performance issues
+    // initLightRays(); // Disabled - performance issues
     initImageReveal();
-    initDepthLayers();
-    initMorphingShapes();
-    initTextGlitch();
-    initScrollVelocity();
+    // initDepthLayers(); // Disabled - causing movement issues
+    // initMorphingShapes(); // Disabled - performance issues
+    // initTextGlitch(); // Disabled - causing text glitches
+    // initScrollVelocity(); // Disabled - causing text movement
     initFounderSection();
 });
 
