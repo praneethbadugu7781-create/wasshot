@@ -247,6 +247,7 @@ function createVideoModal() {
             visibility: hidden;
             transition: all 0.3s ease;
             backdrop-filter: blur(20px);
+            padding: 20px;
         }
         
         .video-modal.active {
@@ -256,21 +257,21 @@ function createVideoModal() {
         
         .video-modal-content {
             position: relative;
-            width: 90%;
-            max-width: 500px;
-            max-height: 90vh;
+            width: 100%;
+            max-width: 400px;
             display: flex;
             flex-direction: column;
+            align-items: center;
         }
         
         .modal-close {
             position: absolute;
             top: -50px;
             right: 0;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 254, 245, 0.1);
-            border: 1px solid rgba(255, 254, 245, 0.2);
+            width: 44px;
+            height: 44px;
+            background: rgba(255, 254, 245, 0.15);
+            border: 1px solid rgba(255, 254, 245, 0.3);
             border-radius: 50%;
             color: #fffef5;
             cursor: pointer;
@@ -282,61 +283,67 @@ function createVideoModal() {
         }
         
         .modal-close:hover {
-            background: rgba(255, 254, 245, 0.2);
+            background: rgba(255, 254, 245, 0.25);
             transform: scale(1.1);
         }
         
         .modal-close svg {
-            width: 20px;
-            height: 20px;
+            width: 24px;
+            height: 24px;
         }
         
         .modal-video-wrapper {
             position: relative;
             width: 100%;
+            max-height: 70vh;
             aspect-ratio: 9/16;
             background: #0c0b0a;
-            border-radius: 12px;
+            border-radius: 16px;
             overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
         }
         
         .modal-video-wrapper video {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
+            background: #000;
             cursor: pointer;
         }
         
         .modal-info {
-            padding: 16px 0;
+            padding: 20px 0 16px;
             text-align: center;
+            width: 100%;
         }
         
         .modal-info h3 {
             font-family: 'Cormorant Garamond', serif;
             font-size: 1.5rem;
             color: #fffef5;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
         
         .modal-info span {
-            font-size: 0.875rem;
+            font-size: 0.9rem;
             color: #a8a29e;
         }
         
         .modal-controls {
             display: flex;
             align-items: center;
-            gap: 12px;
-            padding: 12px 16px;
-            background: rgba(255, 254, 245, 0.05);
-            border-radius: 12px;
+            gap: 16px;
+            padding: 14px 20px;
+            background: rgba(255, 254, 245, 0.08);
+            border-radius: 16px;
+            width: 100%;
+            max-width: 100%;
         }
         
         .control-btn {
-            width: 44px;
-            height: 44px;
-            background: rgba(255, 254, 245, 0.1);
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 254, 245, 0.12);
             border: none;
             border-radius: 50%;
             color: #fffef5;
@@ -349,19 +356,19 @@ function createVideoModal() {
         }
         
         .control-btn:hover {
-            background: rgba(205, 127, 50, 0.3);
+            background: rgba(205, 127, 50, 0.4);
         }
         
         .control-btn svg {
-            width: 20px;
-            height: 20px;
+            width: 22px;
+            height: 22px;
         }
         
         .progress-container {
             flex: 1;
-            height: 6px;
-            background: rgba(255, 254, 245, 0.1);
-            border-radius: 3px;
+            height: 8px;
+            background: rgba(255, 254, 245, 0.15);
+            border-radius: 4px;
             cursor: pointer;
             overflow: hidden;
         }
@@ -369,16 +376,17 @@ function createVideoModal() {
         .progress-fill {
             height: 100%;
             background: linear-gradient(90deg, #cd7f32, #fffef5);
-            border-radius: 3px;
+            border-radius: 4px;
             width: 0%;
             transition: width 0.1s linear;
         }
         
         .time-display {
-            font-size: 0.75rem;
-            color: #a8a29e;
-            min-width: 80px;
+            font-size: 0.85rem;
+            color: #fffef5;
+            min-width: 85px;
             text-align: center;
+            font-family: 'Inter', sans-serif;
         }
         
         /* Disable 3D effects on reel cards */
@@ -391,29 +399,94 @@ function createVideoModal() {
             transform: translateY(-5px) !important;
         }
         
-        @media (max-width: 768px) {
+        /* Desktop */
+        @media (min-width: 769px) {
             .video-modal-content {
-                width: 95%;
-                max-width: 400px;
+                max-width: 450px;
+            }
+            
+            .modal-video-wrapper {
+                max-height: 75vh;
+            }
+        }
+        
+        /* Mobile */
+        @media (max-width: 768px) {
+            .video-modal {
+                padding: 15px;
+            }
+            
+            .video-modal-content {
+                width: 100%;
+                max-width: 100%;
             }
             
             .modal-close {
-                top: -45px;
+                top: -50px;
+                right: 10px;
+                width: 40px;
+                height: 40px;
             }
             
+            .modal-close svg {
+                width: 20px;
+                height: 20px;
+            }
+            
+            .modal-video-wrapper {
+                max-height: 60vh;
+                border-radius: 12px;
+            }
+            
+            .modal-info {
+                padding: 16px 0 12px;
+            }
+            
+            .modal-info h3 {
+                font-size: 1.25rem;
+            }
+            
+            .modal-controls {
+                gap: 10px;
+                padding: 12px 14px;
+                border-radius: 12px;
+            }
+            
+            .control-btn {
+                width: 42px;
+                height: 42px;
+            }
+            
+            .control-btn svg {
+                width: 18px;
+                height: 18px;
+            }
+            
+            .progress-container {
+                height: 6px;
+            }
+            
+            .time-display {
+                font-size: 0.75rem;
+                min-width: 70px;
+            }
+        }
+        
+        /* Very small screens */
+        @media (max-width: 400px) {
             .modal-controls {
                 gap: 8px;
                 padding: 10px 12px;
             }
             
             .control-btn {
-                width: 40px;
-                height: 40px;
+                width: 38px;
+                height: 38px;
             }
             
             .time-display {
                 font-size: 0.7rem;
-                min-width: 70px;
+                min-width: 60px;
             }
         }
     `;
