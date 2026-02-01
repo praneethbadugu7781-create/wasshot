@@ -232,75 +232,73 @@ function createVideoModal() {
     
     document.body.insertAdjacentHTML('beforeend', modalHTML);
     
-    // Add modal styles
+    // Add modal styles - completely rewritten for reliability
     const styles = document.createElement('style');
     styles.textContent = `
+        /* Video Modal Overlay */
         .video-modal {
             position: fixed;
-            inset: 0;
-            z-index: 10000;
-            background: rgba(12, 11, 10, 0.98);
-            display: flex;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 99999;
+            background: rgba(0, 0, 0, 0.95);
+            display: none;
             align-items: center;
             justify-content: center;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(20px);
             padding: 20px;
+            box-sizing: border-box;
         }
         
         .video-modal.active {
-            opacity: 1;
-            visibility: visible;
+            display: flex;
         }
         
+        /* Modal Content Container */
         .video-modal-content {
             position: relative;
-            width: 100%;
-            max-width: 400px;
+            width: 320px;
+            max-width: 90vw;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
         
+        /* Close Button */
         .modal-close {
             position: absolute;
-            top: -50px;
+            top: -55px;
             right: 0;
-            width: 44px;
-            height: 44px;
-            background: rgba(255, 254, 245, 0.15);
-            border: 1px solid rgba(255, 254, 245, 0.3);
+            width: 45px;
+            height: 45px;
+            background: #333;
+            border: 2px solid #555;
             border-radius: 50%;
-            color: #fffef5;
+            color: #fff;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.3s ease;
-            z-index: 10;
-        }
-        
-        .modal-close:hover {
-            background: rgba(255, 254, 245, 0.25);
-            transform: scale(1.1);
+            z-index: 100;
         }
         
         .modal-close svg {
-            width: 24px;
-            height: 24px;
+            width: 22px;
+            height: 22px;
         }
         
+        /* Video Container */
         .modal-video-wrapper {
-            position: relative;
             width: 100%;
-            max-height: 70vh;
-            aspect-ratio: 9/16;
-            background: #0c0b0a;
-            border-radius: 16px;
+            height: 500px;
+            max-height: 55vh;
+            background: #000;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         
         .modal-video-wrapper video {
@@ -308,88 +306,84 @@ function createVideoModal() {
             height: 100%;
             object-fit: contain;
             background: #000;
-            cursor: pointer;
         }
         
+        /* Video Info */
         .modal-info {
-            padding: 20px 0 16px;
+            padding: 15px 0;
             text-align: center;
             width: 100%;
         }
         
         .modal-info h3 {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
-            color: #fffef5;
-            margin-bottom: 6px;
+            font-size: 1.4rem;
+            color: #fff;
+            margin: 0 0 5px 0;
         }
         
         .modal-info span {
-            font-size: 0.9rem;
-            color: #a8a29e;
+            font-size: 0.85rem;
+            color: #999;
         }
         
+        /* Controls Bar */
         .modal-controls {
             display: flex;
             align-items: center;
-            gap: 16px;
-            padding: 14px 20px;
-            background: rgba(255, 254, 245, 0.08);
-            border-radius: 16px;
+            gap: 12px;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
             width: 100%;
-            max-width: 100%;
+            box-sizing: border-box;
         }
         
         .control-btn {
-            width: 48px;
-            height: 48px;
-            background: rgba(255, 254, 245, 0.12);
+            width: 44px;
+            height: 44px;
+            min-width: 44px;
+            background: rgba(255, 255, 255, 0.15);
             border: none;
             border-radius: 50%;
-            color: #fffef5;
+            color: #fff;
             cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: all 0.3s ease;
-            flex-shrink: 0;
-        }
-        
-        .control-btn:hover {
-            background: rgba(205, 127, 50, 0.4);
         }
         
         .control-btn svg {
-            width: 22px;
-            height: 22px;
+            width: 20px;
+            height: 20px;
         }
         
         .progress-container {
             flex: 1;
             height: 8px;
-            background: rgba(255, 254, 245, 0.15);
+            background: rgba(255, 255, 255, 0.2);
             border-radius: 4px;
             cursor: pointer;
             overflow: hidden;
+            min-width: 50px;
         }
         
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, #cd7f32, #fffef5);
+            background: #cd7f32;
             border-radius: 4px;
             width: 0%;
-            transition: width 0.1s linear;
         }
         
         .time-display {
-            font-size: 0.85rem;
-            color: #fffef5;
-            min-width: 85px;
+            font-size: 0.8rem;
+            color: #fff;
+            min-width: 75px;
             text-align: center;
-            font-family: 'Inter', sans-serif;
+            white-space: nowrap;
         }
         
-        /* Disable 3D effects on reel cards */
+        /* Disable transforms on reel cards */
         .reel-card {
             transform: none !important;
             cursor: pointer;
@@ -399,18 +393,19 @@ function createVideoModal() {
             transform: translateY(-5px) !important;
         }
         
-        /* Desktop */
+        /* Desktop - larger screens */
         @media (min-width: 769px) {
             .video-modal-content {
-                max-width: 450px;
+                width: 380px;
             }
             
             .modal-video-wrapper {
-                max-height: 75vh;
+                height: 600px;
+                max-height: 65vh;
             }
         }
         
-        /* Mobile */
+        /* Mobile adjustments */
         @media (max-width: 768px) {
             .video-modal {
                 padding: 15px;
@@ -418,43 +413,34 @@ function createVideoModal() {
             
             .video-modal-content {
                 width: 100%;
-                max-width: 100%;
+                max-width: 350px;
             }
             
             .modal-close {
                 top: -50px;
-                right: 10px;
                 width: 40px;
                 height: 40px;
             }
             
-            .modal-close svg {
-                width: 20px;
-                height: 20px;
-            }
-            
             .modal-video-wrapper {
-                max-height: 60vh;
-                border-radius: 12px;
-            }
-            
-            .modal-info {
-                padding: 16px 0 12px;
+                height: 450px;
+                max-height: 50vh;
+                border-radius: 10px;
             }
             
             .modal-info h3 {
-                font-size: 1.25rem;
+                font-size: 1.2rem;
             }
             
             .modal-controls {
-                gap: 10px;
-                padding: 12px 14px;
-                border-radius: 12px;
+                gap: 8px;
+                padding: 10px 12px;
             }
             
             .control-btn {
-                width: 42px;
-                height: 42px;
+                width: 40px;
+                height: 40px;
+                min-width: 40px;
             }
             
             .control-btn svg {
@@ -462,31 +448,37 @@ function createVideoModal() {
                 height: 18px;
             }
             
-            .progress-container {
-                height: 6px;
-            }
-            
             .time-display {
-                font-size: 0.75rem;
-                min-width: 70px;
+                font-size: 0.7rem;
+                min-width: 65px;
             }
         }
         
-        /* Very small screens */
+        /* Very small phones */
         @media (max-width: 400px) {
+            .video-modal-content {
+                max-width: 300px;
+            }
+            
+            .modal-video-wrapper {
+                height: 400px;
+                max-height: 45vh;
+            }
+            
             .modal-controls {
-                gap: 8px;
-                padding: 10px 12px;
+                gap: 6px;
+                padding: 8px 10px;
             }
             
             .control-btn {
-                width: 38px;
-                height: 38px;
+                width: 36px;
+                height: 36px;
+                min-width: 36px;
             }
             
             .time-display {
-                font-size: 0.7rem;
-                min-width: 60px;
+                font-size: 0.65rem;
+                min-width: 55px;
             }
         }
     `;
